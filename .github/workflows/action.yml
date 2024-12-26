@@ -1,22 +1,27 @@
-name: My Action
+name: Simple CI Workflow
 
+# Run the workflow on push to the main branch
 on:
   push:
     branches:
       - main
 
+# Define the jobs for the workflow
 jobs:
-  job1:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      # Step 1: Check out the repository code
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run script
-        run: |
-          echo hello 
-          touch test
-          ls -l
-          
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run tests (if applicable)
+      - name: Run tests
+        run: npm test
 
           
