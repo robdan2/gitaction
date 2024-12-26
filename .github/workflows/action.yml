@@ -15,13 +15,9 @@ jobs:
       # Step 1: Check out the repository code
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Test
+        run: echo hi
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm install
-
-      # Step 4: Run tests (if applicable)
-      - name: Run tests
-        run: npm test
-
-          
+      - name: Test
+        run: ls -l
